@@ -6,7 +6,7 @@ const sinema_admin = async () => {
     let print = ``;
 
     print += `
-     <table>
+     <table border="1">
         <tr>
             <th>id</th>
             <th>name</th>
@@ -16,27 +16,45 @@ const sinema_admin = async () => {
             
         </tr>
   `;
-    data.map = (v, i) => {
+    data.map((v, i) => {
       print += `
             <tr>
                 <td>${v.id}</td>
                 <td>${v.name}</td>
                 <td>${v.email_id}</td>
                 <td>${v.place}</td>
-                <td><button></button></td>
+                <td><button>E</button><button>D</button</td>
                   
             </tr>
    `;
-    };
+    });
 
     print += `</table>`;
 
     document.getElementById("disk").innerHTML = print;
 
     // console.log(data);
+
+
   } catch (error) {
     console.log(error);
   }
 };
 
 window.onload = sinema_admin;
+
+// ========================================== 
+
+// const cinema_form = async () => {
+//   try {
+//     const response1 = fetch ("http://localhost:3000/posts")
+//   } catch (error) {
+    
+//   }
+// }
+
+
+
+
+// window.onload=cinema_form;
+

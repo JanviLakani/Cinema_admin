@@ -5,7 +5,26 @@
       "name": "abc",
       "email_id": "abc@gmail.com",
       "place": "surat"
+    },
+    {
+      "id": "253c",
+      "name": "cinema",
+      "address": "surat",
+      "cinema_place": "surat_vesu",
+      "gmail": "xyz123@gmail.com"
+    },
+    {
+      "id": "8205",
+      "name": "xyz",
+      "email_id": "xyz@gmail.com",
+      "place": "vadodara"
+    },
+    {
+      "id": "8200",
+      "name": "123",
+      "email_id": "123@gmail.com",
+      "place": "mumbai"
     }
- 
+   
   ]
 }

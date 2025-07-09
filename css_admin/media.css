@@ -1,0 +1,51 @@
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 65%;
+  }
+
+  .col-6{
+    width: 100%;
+    color:  rgb(0, 255, 21);
+    background-color: rgb(255, 195, 127);
+  }
+
+
+  /* o-575 extra small none  1rem=8*/
+
+@media screen and (max-width: 575px) {
+
+}
+
+
+
+/* 576 -767 small sm  */
+@media screen and (min-width: 576px) {
+
+
+}
+
+
+
+/* 768- 991 medium md  1rem=56.25*/
+@media screen and (min-width: 768px) {
+  
+  
+}
+
+/* 992-1199 large lg  */
+@media screen and (min-width: 992px) {
+
+}
+
+/* 1200-1399 extra large 1rem=62.5px */
+@media screen and (min-width: 1200px) {
+
+
+}
+/* 1400 any extra extra large */
+@media screen and (min-width: 1400px) {
+
+
+}
+}
