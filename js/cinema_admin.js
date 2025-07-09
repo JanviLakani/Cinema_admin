@@ -23,6 +23,8 @@ const sinema_admin = async () => {
                 <td>${v.name}</td>
                 <td>${v.email_id}</td>
                 <td>${v.place}</td>
+                <td><button></button></td>
+                  
             </tr>
    `;
     };
