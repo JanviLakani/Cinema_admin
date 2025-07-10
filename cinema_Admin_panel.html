@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css_admin/style.css" />
+    <link rel="stylesheet" href="css_admin/bootstrap.min.css" />
+    <link rel="stylesheet" href="css_admin/media.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Left Sidebar col-3 -->
+        <div class="col-3 sideMenu">
+          <img src="images/Screenshot 2025-07-09 173411.png" alt="logo" /> <br><br>
+          <div class="menu">Cinema</div>
+          <div class="menu">Movie</div>
+          <div class="menu">Time</div>
+          <div class="menu">Seat</div>
+        </div>
+
+        <div class="col-9 right-section">
+            <h2>Add Movie Info</h2>
+          <form action="" id="cinema_form">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="cinemaCss"
+              placeholder="add cinema name"
+            />
+
+            <span id="cinema_name_err" class="err_color"></span><br /><br />
+
+            <input
+              type="text"
+              name="discription"
+              id="discription"
+              class="cinemaCss"
+              placeholder="enter discription"
+            />
+
+            <span id="cinema_disc_err" class="err_color"></span><br /><br />
+
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="cinemaCss"
+              placeholder="enter email"
+            />
+
+            <span id="cinema_email_err" class="err_color"></span><br /><br />
+
+            <input
+              type="text"
+              name="mobile_no"
+              id="mobile_no"
+              class="cinemaCss"
+              placeholder="enetr mobile_no"
+            />
+
+            <span id="cinema_no_err" class="err_color"></span><br /><br />
+
+            <input
+              type="text"
+              name="address"
+              id="address"
+              class="cinemaCss"
+              placeholder="enetr address"
+            />
+
+            <span id="cinema_address_err" class="err_color"></span><br /><br />
+
+            <input type="submit" />
+          </form>
+
+          <br /><br />
+          <div id="displayData" class="tableCss"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/cinema_Admin_panel.js"></script>
+  </body>
+</html>

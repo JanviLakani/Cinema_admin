@@ -8,7 +8,7 @@ const sinema_admin = async () => {
     let print = ``;
 
     print += `
-     <table border="1">
+     <table border>
         <tr>
             
             <th>name</th>
@@ -25,6 +25,7 @@ const sinema_admin = async () => {
                 <td>${v.name}</td>
                 <td>${v.email}</td>
                 <td>${v.place}</td>
+                
                 <td><button onclick="handleEdit('${v.id}')">E</button><button onclick="handledelete('${v.id}')">D</button</td>
                   
             </tr>
@@ -122,12 +123,3 @@ cinema_form.addEventListener("submit", handlesubmit);
 
 // ==========================================
 
-// const cinema_form = async () => {
-//   try {
-//     const response1 = fetch ("http://localhost:3000/posts")
-//   } catch (error) {
-
-//   }
-// }
-
-// window.onload=cinema_form;
