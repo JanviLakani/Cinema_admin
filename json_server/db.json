@@ -1,30 +1,35 @@
 {
-  "posts": [
+  "cinema": [
     {
-      "id": "84b7",
-      "name": "abc",
-      "email_id": "abc@gmail.com",
-      "place": "surat"
+      "id": {},
+      "name": {},
+      "email": {},
+      "place": {}
     },
     {
-      "id": "253c",
-      "name": "cinema",
-      "address": "surat",
-      "cinema_place": "surat_vesu",
-      "gmail": "xyz123@gmail.com"
+      "name": "Janvi lakaniIIIIIII",
+      "email": "lakanijanvi1999@gmai.com",
+      "place": "ereIIOKKKKKKK",
+      "id": "bd06"
     },
     {
-      "id": "8205",
-      "name": "xyz",
-      "email_id": "xyz@gmail.com",
-      "place": "vadodara"
+      "name": "Janvi lakaniIIIIIII",
+      "email": "lakanijanvi1999@gmai.com",
+      "place": "ereIIOKKKKKKK",
+      "id": "c7ff"
     },
     {
-      "id": "8200",
-      "name": "123",
-      "email_id": "123@gmail.com",
-      "place": "mumbai"
+      "name": "Janvi lakani OKOK",
+      "email": "lakanijanvi1999@gmai.com",
+      "place": "ereIIOKKKKKKK",
+      "id": "ccf1"
     }
-   
+  ],
+  "Movie": [
+    {
+      "id": "9c08",
+      "name": "maa",
+      "discription": "surattomubmai"
+    }
   ]
 }
