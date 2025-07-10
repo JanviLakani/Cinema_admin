@@ -33,26 +33,6 @@
   ],
   "Movie": [
     {
-      "id": "87d1",
-      "name": "Test",
-      "discription": "tyt"
-    },
-    {
-      "name": "TestSALARA",
-      "discription": "tytgfgfgfgf",
-      "id": "0b8a"
-    },
-    {
-      "id": "91cd",
-      "name": "Test",
-      "discription": "tyt"
-    },
-    {
-      "id": "c455",
-      "name": "Test",
-      "discription": "tyt"
-    },
-    {
       "id": "a6c8",
       "name": "Testsds",
       "discription": "tytgfgfgfgf"
@@ -71,17 +51,14 @@
       "id": "6172",
       "name": "Janvi lakaniIIIIIII",
       "discription": "janvi"
+    },
+    {
+      "id": "5ee3",
+      "name": "Test",
+      "discription": "tyt"
     }
   ],
   "Cinema": [
-    {
-      "name": "Test",
-      "discription": "okok",
-      "email": "lakanijanvi1999@gmaipokokok.com",
-      "mobile_no": "a434343okokok",
-      "address": "asd asd asdokokokoko",
-      "id": "5d5b"
-    },
     {
       "id": "9e65",
       "name": "Test",
@@ -113,6 +90,14 @@
       "email": "lakanijanvi1999@gmai.com",
       "mobile_no": "a434343",
       "address": "asd asd asd"
+    },
+    {
+      "id": "2c23",
+      "name": "Test",
+      "discription": "tyt",
+      "email": "lakanijanvi1999@gmai.com",
+      "mobile_no": "a434343",
+      "address": "asd asd asdokok"
     }
   ]
 }
