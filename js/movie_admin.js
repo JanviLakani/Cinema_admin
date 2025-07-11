@@ -114,6 +114,7 @@ const handleDelete = async (id) => {
 
 // movie_form.addEventListener("submit", handleSubmit);
 
+
 window.onload = movie_admin;
 
 const handleSubmit = async () => {
