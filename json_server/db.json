@@ -33,51 +33,117 @@
   ],
   "Movie": [
     {
-      "id": "0236",
-      "name": "Testsds",
-      "discription": "tytgfgfgfgf"
+      "name": "janvi",
+      "discription": "tyt",
+      "img_file": "cinema_gallery.jpg",
+      "id": "735a"
     },
     {
-      "id": "3908",
-      "name": "Test",
-      "discription": "tytyyyyyyyyyyyyy"
-    },
-    {
-      "name": "Janvi lakaniIIIIIII",
+      "id": "20a7",
+      "name": "Testdd",
       "discription": "janvi lakani",
-      "id": "6172"
+      "img_file": "city.jpeg"
     },
     {
-      "id": "5ee3",
+      "name": "Janvi lakani",
+      "discription": "janvi lakani",
+      "img_file": "cinema_gallery.jpg",
+      "id": "bab7"
+    },
+    {
+      "id": "8ab7",
+      "name": "Janvi lakani",
+      "discription": "tytgfgfgfgf",
+      "img_file": "cinema_speling_art_photo.jpg"
+    },
+    {
+      "name": "priyanka sorry",
+      "discription": "home theater",
+      "img_file": "popcorn_photo.jpg",
+      "id": "723a"
+    },
+    {
+      "id": "5616",
       "name": "Test",
-      "discription": "tyt"
+      "discription": "323",
+      "img_file": "popcorn_photo.jpg"
+    },
+    {
+      "name": "Janvi lakani",
+      "discription": "tytgfgfgfgf",
+      "img_file": "cinema_gallery.jpg",
+      "id": "aa13"
+    },
+    {
+      "name": "mara",
+      "discription": "tytgfgfgfgf",
+      "img_file": "cinema_gallery.jpg",
+      "id": "5426"
     }
   ],
   "Cinema": [
     {
-      "name": "kavya",
+      "name": "Janvi lakani",
       "discription": "tytgfgfgfgf",
       "email": "lakanijanvi1999@gmail.com",
       "mobile_no": "a434343",
       "address": "asd asd asd asd",
-      "id": "0aa2"
-    },
-    {
-      "name": "janvi",
-      "discription": "tytgfgfgfgf",
-      "email": "lakanijanvi1999@gmail.com",
-      "mobile_no": "a434343",
-      "address": "asd asd asd asd",
-      "img_file": "images.jpg",
+      "img_file": "cinema_gallery.jpg",
       "id": "8425"
     },
     {
-      "id": "56e1",
-      "name": "dfdfdf",
-      "discription": "tytgfgfgfgf",
-      "email": "lakanijanvi1999@gmail.com",
+      "name": "1",
+      "discription": "tyt",
+      "email": "lakanijanvi1999@gmai.com",
       "mobile_no": "a434343",
-      "address": "asd asd asd asd"
+      "address": "asd asd asd",
+      "img_file": "cinema_speling_art_photo.jpg",
+      "id": "0e56"
+    },
+    {
+      "name": "mansi",
+      "discription": "kathiriya",
+      "email": "kmansi1999@gmai.com",
+      "mobile_no": "0000000000",
+      "address": "jamnagar",
+      "img_file": "cinema_gallery.jpg",
+      "id": "f036"
+    },
+    {
+      "id": "f369",
+      "name": "janvi",
+      "discription": "javascript learn",
+      "email": "lakanijanvi2000@gmai.com",
+      "mobile_no": "123456789",
+      "address": "nana varachha surat",
+      "img_file": "images.jpg"
+    },
+    {
+      "name": "bansi",
+      "discription": "323",
+      "email": "lakanijanvi1999@gmai.com",
+      "mobile_no": "a434343",
+      "address": "asd asd asd",
+      "img_file": "cinema_speling_art_photo.jpg",
+      "id": "fe9f"
+    },
+    {
+      "id": "83ed",
+      "name": "Test",
+      "discription": "323",
+      "email": "lakanijanvi1999@gmai.com",
+      "mobile_no": "a434343",
+      "address": "asd asd asd",
+      "img_file": "cinema_speling_art_photo.jpg"
+    },
+    {
+      "id": "d352",
+      "name": "Janvi lakani",
+      "discription": "tyt",
+      "email": "lakanijanvi1999@gmai.com",
+      "mobile_no": "a434343",
+      "address": "asd asd asd asd",
+      "img_file": "city.jpeg"
     }
   ]
 }

@@ -4,30 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    
+    <link rel="stylesheet" href="css_admin/style.css" />
+    <link rel="stylesheet" href="css_admin/bootstrap.min.css" />
+    <link rel="stylesheet" href="css_admin/media.css" />
+
   </head>
   <body>
-
+       <h2>Add Movie Info</h2>
     <form action="" id="movie_form">
 
         <input type="text" id="name" placeholder="enter movie name"> 
 
-        <span id="movie_name_err"></span><br><br>
+        <span id="movie_name_err" class="err_color"></span><br><br>
 
         <input type="text" id="discription" placeholder="enter movie discription"> 
 
-        <span id="movie_disc_err"></span><br><br>
+        <span id="movie_disc_err" class="err_color"></span><br><br>
+
+        <input type="file" name="img_file" id="img_file" onchange="handleChange()">
+
+        <img  src="" id="disk_movie_img" name="disk_movie_img" width="100px" height="100px">
+
+        <span id="file_img_err" class="err_color"></span> <br><br>
 
         <input type="submit">
     </form> <br><br>
 
     <div id="display"></div>
 
-    <!-- <table>
-      <tr>
-        <th></th>
-        <th></th>
-      </tr>
-    </table> -->
 
     <script src="js/movie_admin.js"></script>
   </body>

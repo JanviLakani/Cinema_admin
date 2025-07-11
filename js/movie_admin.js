@@ -9,8 +9,9 @@ const movie_admin = async () => {
     let print = ``;
 
     print += `
-      <table border="1">
+      <table class="table table-bordered">
       <tr>
+        <th>image</th>    
         <th>name</th>
         <th>description</th>
         <th>action</th>
@@ -21,6 +22,7 @@ const movie_admin = async () => {
     data.map((v, i) => {
       print += `
       <tr>
+        <td>><img src="/images/cinema_img/${v.img_file} " width="100px" height="100px"</td>
         <td>${v.name}</td>
         <td>${v.discription}</td>
         <td><button onclick ="handleEdit('${v.id}')">E</button><button onclick="handleDelete('${v.id}')">D</button></td>
@@ -50,6 +52,9 @@ const handleEdit = async (id) => {
 
   document.getElementById("name").value = obj.name;
   document.getElementById("discription").value = obj.discription;
+ // document.getElementById("img_file").value=obj.img_file
+    document.getElementById("disk_movie_img").src =
+    "/images/cinema_img/" + obj.img_file;
 
   upDateid = obj.id;
 };
@@ -69,50 +74,15 @@ const handleDelete = async (id) => {
 
 // ================================================================================ 2 delete
 
-// window.onload = movie_admin;
+// ========================================= onchange
 
-// const handleSubmit = async () => {
+const handleChange = () => {
+  const img_file = document.getElementById("img_file").files[0];
+  document.getElementById("disk_movie_img").src =
+    "/images/cinema_img/" + img_file.name;
+};
 
-//   const name = document.getElementById("name").value;
-//   const discription = document.getElementById("discription").value;
-
-//   const obj = {
-//     name,
-//     discription,
-//   };
-
-//   try {
-//     if (upDateid === null) {
-
-//       const response = await fetch("http://localhost:3000/Movie", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-
-//         body: JSON.stringify(obj),
-//       });
-
-//     } else {
-
-//       const response = await fetch("http://localhost:3000/Movie/" + upDateid ,{
-//         method: "PUT",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-
-//         body: JSON.stringify(obj),
-//       });
-
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// const movie_form = document.getElementById("movie_form");
-
-// movie_form.addEventListener("submit", handleSubmit);
+// =========================================
 
 
 window.onload = movie_admin;
@@ -122,6 +92,15 @@ const handleSubmit = async () => {
 
   const name = document.getElementById("name").value;
   const discription = document.getElementById("discription").value;
+    const img_file = document.getElementById("img_file").files[0];
+
+    // console.log(img_file);
+    
+      const disk_movie_img = document.getElementById("disk_movie_img").src;
+
+  const arr = disk_movie_img.split("/");
+
+  console.log(arr[arr.length - 1]);
 
   let movieValue = false;
 
@@ -139,6 +118,33 @@ const handleSubmit = async () => {
     document.getElementById("movie_disc_err").innerHTML=""
   }
 
+  if(img_file) {
+    
+     if (
+      img_file?.type.toLowerCase() === "image/jpg" ||
+      img_file?.type.toLowerCase() === "image/jpeg" ||
+      img_file?.type.toLowerCase() === "image/png"
+    ) {
+      document.getElementById("file_img_err").innerHTML = "";
+    } else {
+      document.getElementById("file_img_err").innerHTML =
+        "enter png/jpg/jpeg file only";
+      movieValue = true;
+    }
+
+    if (img_file?.size > 2 * 1024 * 1024) {
+      document.getElementById("file_img_err").innerHTML =
+        "file size is maximum 2mb";
+      movieValue = true;
+    } else {
+      document.getElementById("file_img_err").innerHTML = "";
+    }
+  }
+
+
+  
+  
+
 //   ================================== 
 
   if (!movieValue) {
@@ -146,6 +152,7 @@ const handleSubmit = async () => {
       const obj = {
     name,
     discription,
+     img_file: img_file?.name ? img_file?.name : arr[arr.length - 1],
   };
 
   try {
