@@ -10,6 +10,7 @@ const cinema_admin = async () => {
     print += `
       <table class="table table-bordered">
       <tr>
+        <th>image</th>
         <th>name</th>
         <th>discription</th>
         <th>email</th>
@@ -24,6 +25,7 @@ const cinema_admin = async () => {
     data.map((v, i) => {
       print += `
       <tr>
+        <td>><img src="/images/cinema_img/${v.img_file} " width="100px" height="100px"</td>
         <td>${v.name}</td>
         <td>${v.discription}</td>
         <td>${v.email}</td>
@@ -59,6 +61,9 @@ const handleEdit = async (id) => {
   document.getElementById("email").value = obj.email;
   document.getElementById("mobile_no").value = obj.mobile_no;
   document.getElementById("address").value = obj.address;
+  // document.getElementById("img_file").value=obj.img_file
+  document.getElementById("disk_cinema_img").src =
+    "/images/cinema_img/" + obj.img_file;
 
   upDateid = obj.id;
 };
@@ -73,97 +78,140 @@ const handleDelete = async (id) => {
   }
 };
 
+const handleChange = () => {
+  const img_file = document.getElementById("img_file").files[0];
+  document.getElementById("disk_cinema_img").src =
+    "/images/cinema_img/" + img_file.name;
+};
+
 const handleSubmit = async () => {
-    event.preventDefault();
+  event.preventDefault();
 
   const name = document.getElementById("name").value;
   const discription = document.getElementById("discription").value;
   const email = document.getElementById("email").value;
   const mobile_no = document.getElementById("mobile_no").value;
   const address = document.getElementById("address").value;
+  const img_file = document.getElementById("img_file").files[0];
 
-   let cinemaValue = false;
+  // const disk_cinema_img=document.getElementById("disk_cinema_img").img_file.name
 
-   if(name === "") {
-    document.getElementById("cinema_name_err").innerHTML="please enter cinema name"
-    cinemaValue=true;
-   } else {
-    document.getElementById("cinema_name_err").innerHTML=""
-   }
+  const disk_cinema_img = document.getElementById("disk_cinema_img").src;
 
-     if(discription === "") {
-    document.getElementById("cinema_disc_err").innerHTML="please enter cinema discription"
-    cinemaValue=true;
-   } else {
-    document.getElementById("cinema_disc_err").innerHTML=""
-   }
+  const arr = disk_cinema_img.split("/");
 
-     if(email === "") {
-    document.getElementById("cinema_email_err").innerHTML="please enter cinema email"
-    cinemaValue=true;
-   } else {
-    document.getElementById("cinema_email_err").innerHTML=""
-   }
+  console.log(arr[arr.length - 1]);
 
-     if(mobile_no === "") {
-    document.getElementById("cinema_no_err").innerHTML="please enter your mobile_no"
-    cinemaValue=true;
-   } else {
-    document.getElementById("cinema_no_err").innerHTML=""
-   }
+  let cinemaValue = false;
 
-     if(address === "") {
-    document.getElementById("cinema_address_err").innerHTML="please enter cinema address"
-    cinemaValue=true;
-   } else {
-    document.getElementById("cinema_address_err").innerHTML=""
-   }
-
-// ===================================================== 
-   if (!cinemaValue) {
-
-     const obj = {
-    name,
-    discription,
-    email,
-    mobile_no,
-    address,
-  };
-
-  try {
-    if (upDateid === null) {
-
-      const response = await fetch("http://localhost:3000/Cinema", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify(obj),
-      });
-
-
-    } else {
-
-      const response = await fetch("http://localhost:3000/Cinema/" + upDateid, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify(obj),
-      });
-
-    }
-  } catch (error) {
-    console.log(error);
+  if (name === "") {
+    document.getElementById("cinema_name_err").innerHTML =
+      "please enter cinema name";
+    cinemaValue = true;
+  } else {
+    document.getElementById("cinema_name_err").innerHTML = "";
   }
 
+  if (discription === "") {
+    document.getElementById("cinema_disc_err").innerHTML =
+      "please enter cinema discription";
+    cinemaValue = true;
+  } else {
+    document.getElementById("cinema_disc_err").innerHTML = "";
+  }
 
-   }
+  if (email === "") {
+    document.getElementById("cinema_email_err").innerHTML =
+      "please enter cinema email";
+    cinemaValue = true;
+  } else {
+    document.getElementById("cinema_email_err").innerHTML = "";
+  }
 
-//    ===================================================== 
+  if (mobile_no === "") {
+    document.getElementById("cinema_no_err").innerHTML =
+      "please enter your mobile_no";
+    cinemaValue = true;
+  } else {
+    document.getElementById("cinema_no_err").innerHTML = "";
+  }
 
+  if (address === "") {
+    document.getElementById("cinema_address_err").innerHTML =
+      "please enter cinema address";
+    cinemaValue = true;
+  } else {
+    document.getElementById("cinema_address_err").innerHTML = "";
+  }
+
+  // console.log(img_file.size, );
+
+  if (img_file) {
+    if (
+      img_file?.type.toLowerCase() === "image/jpg" ||
+      img_file?.type.toLowerCase() === "image/jpeg" ||
+      img_file?.type.toLowerCase() === "image/png"
+    ) {
+      document.getElementById("cinema_file_err").innerHTML = "";
+    } else {
+      document.getElementById("cinema_file_err").innerHTML =
+        "enter png/jpg/jpeg file only";
+      cinemaValue = true;
+    }
+
+    if (img_file?.size > 2 * 1024 * 1024) {
+      document.getElementById("cinema_file_err").innerHTML =
+        "file size is maximum 2mb";
+      cinemaValue = true;
+    } else {
+      document.getElementById("cinema_file_err").innerHTML = "";
+    }
+  }
+
+  console.log(cinemaValue);
+
+  // =====================================================
+  if (!cinemaValue) {
+    const obj = {
+      name,
+      discription,
+      email,
+      mobile_no,
+      address,
+      img_file: img_file?.name ? img_file?.name : arr[arr.length - 1],
+    };
+
+    console.log(obj);
+
+    try {
+      if (upDateid === null) {
+        const response = await fetch("http://localhost:3000/Cinema", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify(obj),
+        });
+      } else {
+        const response = await fetch(
+          "http://localhost:3000/Cinema/" + upDateid,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify(obj),
+          }
+        );
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  //    =====================================================
 };
 
 const cinema_form = document.getElementById("cinema_form");

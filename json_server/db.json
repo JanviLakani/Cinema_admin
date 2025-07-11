@@ -33,11 +33,6 @@
   ],
   "Movie": [
     {
-      "id": "a6c8",
-      "name": "Testsds",
-      "discription": "tytgfgfgfgf"
-    },
-    {
       "id": "0236",
       "name": "Testsds",
       "discription": "tytgfgfgfgf"
@@ -48,9 +43,9 @@
       "discription": "tytyyyyyyyyyyyyy"
     },
     {
-      "id": "6172",
       "name": "Janvi lakaniIIIIIII",
-      "discription": "janvi"
+      "discription": "janvi lakani",
+      "id": "6172"
     },
     {
       "id": "5ee3",
@@ -60,44 +55,29 @@
   ],
   "Cinema": [
     {
-      "id": "9e65",
-      "name": "Test",
-      "discription": "tyt",
-      "email": "lakanijanvi1999@gmai.com",
+      "name": "kavya",
+      "discription": "tytgfgfgfgf",
+      "email": "lakanijanvi1999@gmail.com",
       "mobile_no": "a434343",
-      "address": "asd asd asd"
+      "address": "asd asd asd asd",
+      "id": "0aa2"
     },
     {
-      "id": "2196",
-      "name": "Test",
-      "discription": "tyt",
-      "email": "lakanijanvi1999@gmai.com",
+      "name": "janvi",
+      "discription": "tytgfgfgfgf",
+      "email": "lakanijanvi1999@gmail.com",
       "mobile_no": "a434343",
-      "address": "asd asd asd"
+      "address": "asd asd asd asd",
+      "img_file": "images.jpg",
+      "id": "8425"
     },
     {
-      "id": "6613",
-      "name": "Test",
-      "discription": "tyt",
-      "email": "lakanijanvi1999@gmai.com",
+      "id": "56e1",
+      "name": "dfdfdf",
+      "discription": "tytgfgfgfgf",
+      "email": "lakanijanvi1999@gmail.com",
       "mobile_no": "a434343",
-      "address": "asd asd asd"
-    },
-    {
-      "id": "bc97",
-      "name": "Test",
-      "discription": "tyt",
-      "email": "lakanijanvi1999@gmai.com",
-      "mobile_no": "a434343",
-      "address": "asd asd asd"
-    },
-    {
-      "id": "2c23",
-      "name": "Test",
-      "discription": "tyt",
-      "email": "lakanijanvi1999@gmai.com",
-      "mobile_no": "a434343",
-      "address": "asd asd asdokok"
+      "address": "asd asd asd asd"
     }
   ]
 }
