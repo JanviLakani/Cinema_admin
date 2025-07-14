@@ -1,5 +1,5 @@
-const cinema = async() => {
-      try {
+const cinema = async () => {
+  try {
     const response = await fetch("http://localhost:3000/Cinema");
 
     const data = await response.json();
@@ -22,78 +22,42 @@ const cinema = async() => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
+const handleChangeMovie = async () => {
+  try {
+    const response = await fetch("http://localhost:3000/Movie");
 
-// const movie = async() => {
-//       try {
-//     const response = await fetch("http://localhost:3000/Movie");
+    const data = await response.json();
 
-//     const data = await response.json();
+    console.log("movie", data);
 
-//     console.log(data);
+    const cinema_id = document.getElementById("cinema").value;
 
-//     let print = ``;
+    console.log("cinema_id", cinema_id);
 
-//     data.map((v, i) => {
-//       print += `
-      
-//        <option value="${v.id}">${v.name}</option>
-      
-//       `;
-//     });
+    const fdata = data.filter((v) => v.cinema_id == cinema_id);
 
-//     print += ` </select>`;
+    console.log("fdata", fdata);
 
-//     document.getElementById("movie").innerHTML = print;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-
-
-const handleChangeMovie =async () => {
-    try {
-
-        const response = await fetch ("http://localhost:3000/Movie")
-
-        const data= await response.json();
-
-        console.log("movie",data);
-
-        const cinema=document.getElementById("cinema_id").value
-
-        console.log("cinema");
+    let print = ``;
+    fdata.map((v, i) => {
+      print += `
         
+         <option value="${v.id}">${v.name}</option>
         
+        `;
+    });
 
-        const fdata=data.filter((v,i)=> {
-            
-        })
+    p;
 
-        console.log(fdata);
-        
+    document.getElementById("movie").innerHTML = print;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-       
-        
-
-       
-
-        
-        
-        
-    } catch (error) {
-
-        console.log(error);
-        
-        
-    }
-}
-
-window.onload=function() {
-    cinema();
-}
- 
-
+window.onload = function () {
+  cinema();
+};
 

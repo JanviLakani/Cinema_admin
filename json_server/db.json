@@ -1,6 +1,12 @@
 {
   "cinema": [
     {
+      "id": {},
+      "name": {},
+      "email": {},
+      "place": {}
+    },
+    {
       "name": "Test",
       "email": "lakanijanvi1999@gmai.com",
       "place": "ereIIggoooooooooo",
@@ -27,116 +33,95 @@
   ],
   "Movie": [
     {
-      "id": "4ddd",
+      "cinema_id": "8425",
+      "name": "fighter",
+      "discription": "FIGHTING SEEN",
+      "img_file": "cinema_smile.jpg",
+      "id": "ac91"
+    },
+    {
       "cinema_id": "f036",
-      "name": "Janvi sxs",
-      "discription": "9c08DSDSD",
+      "name": "dhamaal",
+      "discription": "comedy film",
+      "img_file": "cinema_gallery.jpg",
+      "id": "0afe"
+    },
+    {
+      "cinema_id": "fe9f",
+      "name": "hera feri",
+      "discription": " comedy,drama",
+      "img_file": "city.jpeg",
+      "id": "ba8b"
+    },
+    {
+      "id": "681f",
+      "cinema_id": "8425",
+      "name": "3 Idiots",
+      "discription": "comedi",
       "img_file": "cinema_gallery.jpg"
     },
     {
-      "cinema_id": "f036",
-      "name": "ACTION MOVIE",
-      "discription": "FIGHTING SEEN",
-      "img_file": "cinema_speling_art_photo.jpg",
-      "id": "da95"
-    },
-    {
-      "id": "35ae",
-      "cinema_id": "f036",
-      "name": "dfdfdf",
-      "discription": "janvi",
-      "img_file": "popcorn_photo.jpg"
+      "id": "d7fa",
+      "cinema_id": "83ed",
+      "name": "war",
+      "discription": "action movie",
+      "img_file": "cinema_talk.jpeg"
     }
   ],
   "Cinema": [
     {
-      "name": "Janvi lakani",
-      "discription": "maa",
+      "name": "CITYPLUS MULTIPLEX",
+      "discription": "VESU",
       "email": "lakanijanvi1999@gmail.com",
-      "mobile_no": "a434343",
-      "address": "asd asd asd asd",
-      "img_file": "cinema_speling_art_photo.jpg",
+      "mobile_no": "99987978979",
+      "address": "SURAT",
+      "img_file": "images.jpg",
       "id": "8425"
     },
     {
-      "name": "1",
-      "discription": "tyt",
+      "name": "RAJHANS CINEMA",
+      "discription": "SARTHANA",
       "email": "lakanijanvi1999@gmai.com",
       "mobile_no": "a434343",
-      "address": "asd asd asd",
+      "address": "SARATHANA SURAT",
       "img_file": "cinema_speling_art_photo.jpg",
       "id": "0e56"
     },
     {
-      "name": "mansi",
-      "discription": "kathiriya",
+      "name": "INOX",
+      "discription": " Aai Mata Road Parvat Patia, Surat",
       "email": "kmansi1999@gmai.com",
-      "mobile_no": "0000000000",
-      "address": "jamnagar",
+      "mobile_no": "8989898989",
+      "address": "SURAT",
       "img_file": "cinema_gallery.jpg",
       "id": "f036"
     },
     {
-      "id": "f369",
-      "name": "janvi",
-      "discription": "javascript learn",
-      "email": "lakanijanvi2000@gmai.com",
-      "mobile_no": "123456789",
-      "address": "nana varachha surat",
-      "img_file": "images.jpg"
-    },
-    {
-      "name": "bansi",
-      "discription": "323",
+      "name": "RUPALI CINEMA",
+      "discription": "RANDER ROAD",
       "email": "lakanijanvi1999@gmai.com",
       "mobile_no": "a434343",
-      "address": "asd asd asd",
-      "img_file": "cinema_speling_art_photo.jpg",
+      "address": "SURAT",
+      "img_file": "cinema_smile.jpg",
       "id": "fe9f"
     },
     {
-      "id": "83ed",
-      "name": "Test",
-      "discription": "323",
+      "name": "VALENTINE MULTIPLEX",
+      "discription": "DUMAS ROAD",
       "email": "lakanijanvi1999@gmai.com",
       "mobile_no": "a434343",
-      "address": "asd asd asd",
-      "img_file": "cinema_speling_art_photo.jpg"
+      "address": "SURAT",
+      "img_file": "home_theater_cinema.jpg",
+      "id": "83ed"
     },
     {
-      "name": "Janvi lakani",
-      "discription": "tyt",
+      "name": "Imperial Square Mall Cinema",
+      "discription": "pal",
       "email": "lakanijanvi1999@gmai.com",
-      "mobile_no": "a434343",
-      "address": "asd asd asd asd",
-      "img_file": "cinema_gallery.jpg",
+      "mobile_no": "9875543332",
+      "address": "surat",
+      "img_file": "city.jpeg",
       "id": "d352"
-    }
-  ],
-  "time": [
-    {
-      "id": "4a5d",
-      "time": "10:22"
-    },
-    {
-      "id": "28a4",
-      "time": "10:26"
-    },
-    {
-      "id": "b80e",
-      "time": "13:25"
-    },
-    {
-      "id": "ecec",
-      "time": "13:34"
-    },
-    {
-      "id": "19ac",
-      "time": ""
-    },
-    {
-      "id": "dc03",
-      "time": "10:52"
     }
   ]
 }

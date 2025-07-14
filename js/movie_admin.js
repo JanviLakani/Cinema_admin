@@ -6,12 +6,16 @@ const movie_admin = async () => {
 
     const data = await response.json();
 
+    console.log("00000000" , data);
+    
+
     let print = ``;
 
     print += `
       <table class="table table-bordered">
       <tr>
         <th>image</th>    
+        <th>Cinema Name</th>    
         <th>name</th>
         <th>description</th>
         <th>action</th>
@@ -19,10 +23,13 @@ const movie_admin = async () => {
     
     `;
 
-    data.map((v, i) => {
+    data.map( (v, i) => {
+    
+
       print += `
       <tr>
         <td>><img src="/images/cinema_img/${v.img_file} " width="100px" height="100px"</td>
+        <td>${v.cinema_id}</td>
         <td>${v.name}</td>
         <td>${v.discription}</td>
         <td><button onclick ="handleEdit('${v.id}')">E</button><button onclick="handleDelete('${v.id}')">D</button></td>
@@ -227,3 +234,18 @@ window.onload = function() {
   movie_admin()
   cinema_drop_down()
 } 
+
+
+
+const getCinemaName = async (cinema_id) => {
+  const response = await fetch ("http://localhost:3000/Cinema")
+  const data =await response.json();
+  const cinemaName = data.find((v) => v.id === cinema_id);
+
+  console.log(
+cinemaName.name);
+
+return cinemaName?.name
+
+
+}

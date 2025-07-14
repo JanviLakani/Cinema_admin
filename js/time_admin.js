@@ -1,113 +1,28 @@
-const movie_admin = async () => {
-  try {
-    const response = await fetch("http://localhost:3000/time");
+const time_form = document.getElementById("time_form");
+const first_plus = document.getElementById("first_plus");
 
-    const data = await response.json();
+const createTime = () => {
+  const div = document.createElement("div");
 
-    console.log(data);
+  const input = document.createElement("input");
+  input.type = "time";
 
-    let print = ``;
+  const plus = document.createElement("button");
+  plus.textContent = "+";
+  plus.addEventListener("click", createTime);
 
-    print += `
-      <table border>
-      <tr>
-        <th>time</th>    
-        <th>action</th>
-      
-      </tr>
-    
-    `;
+  const minus = document.createElement("button");
+  minus.textContent = "-";
 
-    data.map((v) => {
-      print += `
-        <tr>
-            <th>${v.time}</th>
-            <th><button onclick="handlePlusTime('${v.id}')">+</button><button onclick="handleMinusTime('${v.id}')">-</button></th>
-        </tr>
-            
-     `;
-    });
+  minus.addEventListener("click", () => {
+    div.remove();
+  });
 
-    print += `</table>`;
+  div.appendChild(input);
+  div.appendChild(plus);
+  div.appendChild(minus);
 
-    document.getElementById("display").innerHTML = print;
-  } catch (error) {
-    console.log(error);
-  }
+  time_form.appendChild(div);
 };
 
-const handlePlusTime = () => {
-
-
-    try {
-        const response = fetch ("http://localhost:3000/time" , )
-        
-    } catch (error) {
-        console.log(error);
-        
-    }
-
-}
-
-
-const handleMinusTime = (id) => {
-try {
-
-    const response = fetch ("http://localhost:3000/time/" + id, {
-        method : "DELETE"
-    })
-    
-} catch (error) {
-    console.log(error);
-    
-}
-}
-
-
-const handleSubmit = async () => {
-    const time=document.getElementById("time").value;
-
-    const obj={
-        time
-    }
-
-    try {
-        const response = await fetch ("http://localhost:3000/time", {
-            method : 'POST',
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(obj),
-        });
-
-
-    } catch (error) {
-        console.log(error);
-        
-    }
-
-    console.log(time);
-    
-}
-
-
-
-
-window.onload = movie_admin;
-
-const time_form=document.getElementById("time_form")
-time_form.addEventListener("submit" , handleSubmit)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+first_plus.addEventListener("click", createTime);   //1
