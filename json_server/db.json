@@ -1,12 +1,6 @@
 {
   "cinema": [
     {
-      "id": {},
-      "name": {},
-      "email": {},
-      "place": {}
-    },
-    {
       "name": "Test",
       "email": "lakanijanvi1999@gmai.com",
       "place": "ereIIggoooooooooo",
@@ -33,62 +27,42 @@
   ],
   "Movie": [
     {
-      "name": "janvi",
-      "discription": "tyt",
-      "img_file": "cinema_gallery.jpg",
-      "id": "735a"
+      "cinema_id": "d352",
+      "name": "katha",
+      "discription": "janvi",
+      "img_file": "cinema_smile.jpg",
+      "id": "6761"
     },
     {
-      "id": "20a7",
-      "name": "Testdd",
-      "discription": "janvi lakani",
-      "img_file": "city.jpeg"
+      "id": "4ddd",
+      "cinema_id": "f036",
+      "name": "Janvi sxs",
+      "discription": "9c08DSDSD",
+      "img_file": "cinema_gallery.jpg"
     },
     {
-      "name": "Janvi lakani",
-      "discription": "janvi lakani",
-      "img_file": "cinema_gallery.jpg",
-      "id": "bab7"
+      "cinema_id": "f036",
+      "name": "ACTION MOVIE",
+      "discription": "FIGHTING SEEN",
+      "img_file": "cinema_speling_art_photo.jpg",
+      "id": "da95"
     },
     {
-      "id": "8ab7",
-      "name": "Janvi lakani",
-      "discription": "tytgfgfgfgf",
-      "img_file": "cinema_speling_art_photo.jpg"
-    },
-    {
-      "name": "priyanka sorry",
-      "discription": "home theater",
-      "img_file": "popcorn_photo.jpg",
-      "id": "723a"
-    },
-    {
-      "id": "5616",
-      "name": "Test",
-      "discription": "323",
+      "id": "35ae",
+      "cinema_id": "f036",
+      "name": "dfdfdf",
+      "discription": "janvi",
       "img_file": "popcorn_photo.jpg"
-    },
-    {
-      "name": "Janvi lakani",
-      "discription": "tytgfgfgfgf",
-      "img_file": "cinema_gallery.jpg",
-      "id": "aa13"
-    },
-    {
-      "name": "mara",
-      "discription": "tytgfgfgfgf",
-      "img_file": "cinema_gallery.jpg",
-      "id": "5426"
     }
   ],
   "Cinema": [
     {
       "name": "Janvi lakani",
-      "discription": "tytgfgfgfgf",
+      "discription": "maa",
       "email": "lakanijanvi1999@gmail.com",
       "mobile_no": "a434343",
       "address": "asd asd asd asd",
-      "img_file": "cinema_gallery.jpg",
+      "img_file": "cinema_speling_art_photo.jpg",
       "id": "8425"
     },
     {
@@ -144,6 +118,32 @@
       "mobile_no": "a434343",
       "address": "asd asd asd asd",
       "img_file": "city.jpeg"
+    }
+  ],
+  "time": [
+    {
+      "id": "4a5d",
+      "time": "10:22"
+    },
+    {
+      "id": "28a4",
+      "time": "10:26"
+    },
+    {
+      "id": "b80e",
+      "time": "13:25"
+    },
+    {
+      "id": "ecec",
+      "time": "13:34"
+    },
+    {
+      "id": "19ac",
+      "time": ""
+    },
+    {
+      "id": "dc03",
+      "time": "10:52"
     }
   ]
 }
