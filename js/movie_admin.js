@@ -50,10 +50,11 @@ const handleEdit = async (id) => {
 
   console.log(obj);
 
+  document.getElementById("cinema").value=obj.cinema_id;
   document.getElementById("name").value = obj.name;
   document.getElementById("discription").value = obj.discription;
- // document.getElementById("img_file").value=obj.img_file
-    document.getElementById("disk_movie_img").src =
+  // document.getElementById("img_file").value=obj.img_file
+  document.getElementById("disk_movie_img").src =
     "/images/cinema_img/" + obj.img_file;
 
   upDateid = obj.id;
@@ -85,18 +86,20 @@ const handleChange = () => {
 // =========================================
 
 
-window.onload = movie_admin;
 
 const handleSubmit = async () => {
-    event.preventDefault();
+  event.preventDefault();
 
+  const cinema_id = document.getElementById("cinema").value;
   const name = document.getElementById("name").value;
   const discription = document.getElementById("discription").value;
-    const img_file = document.getElementById("img_file").files[0];
+  const img_file = document.getElementById("img_file").files[0];
 
-    // console.log(img_file);
-    
-      const disk_movie_img = document.getElementById("disk_movie_img").src;
+  console.log(cinema_id);
+
+  // console.log(img_file);
+
+  const disk_movie_img = document.getElementById("disk_movie_img").src;
 
   const arr = disk_movie_img.split("/");
 
@@ -104,23 +107,30 @@ const handleSubmit = async () => {
 
   let movieValue = false;
 
+  // if (cinema === '0') {
+  //    document.getElementById("movie_name_err").innerHTML = "please select cinema name";
+  // } else {
+  //    document.getElementById("movie_name_err").innerHTML = "";
+  // }
+
   if (name === "") {
-    document.getElementById("movie_name_err").innerHTML = "please enter movie name ";
+    document.getElementById("movie_name_err").innerHTML =
+      "please enter movie name ";
     movieValue = true;
   } else {
     document.getElementById("movie_name_err").innerHTML = "";
   }
 
-  if( discription === '') {
-    document.getElementById("movie_disc_err").innerHTML="please enter movie discription"
+  if (discription === "") {
+    document.getElementById("movie_disc_err").innerHTML =
+      "please enter movie discription";
     movieValue = true;
   } else {
-    document.getElementById("movie_disc_err").innerHTML=""
+    document.getElementById("movie_disc_err").innerHTML = "";
   }
 
-  if(img_file) {
-    
-     if (
+  if (img_file) {
+    if (
       img_file?.type.toLowerCase() === "image/jpg" ||
       img_file?.type.toLowerCase() === "image/jpeg" ||
       img_file?.type.toLowerCase() === "image/png"
@@ -141,57 +151,79 @@ const handleSubmit = async () => {
     }
   }
 
-
-  
-  
-
-//   ================================== 
+  //   ==================================
 
   if (!movieValue) {
+    const obj = {
+      cinema_id,
+      name,
+      discription,
+      img_file: img_file?.name ? img_file?.name : arr[arr.length - 1],
+    };
 
-      const obj = {
-    name,
-    discription,
-     img_file: img_file?.name ? img_file?.name : arr[arr.length - 1],
-  };
+    try {
+      if (upDateid === null) {
+        const response = await fetch("http://localhost:3000/Movie", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
 
-  try {
-    if (upDateid === null) {
+          body: JSON.stringify(obj),
+        });
+      } else {
+        const response = await fetch(
+          "http://localhost:3000/Movie/" + upDateid,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
 
-      const response = await fetch("http://localhost:3000/Movie", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify(obj),
-      });
-
-
-    } else {
-
-
-      const response = await fetch("http://localhost:3000/Movie/" + upDateid ,{
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify(obj),
-      });
-
-
+            body: JSON.stringify(obj),
+          }
+        );
+      }
+    } catch (error) {
+      console.log(error);
     }
-  } catch (error) {
-    console.log(error);
   }
 
-  }
-
-
-//   ================================= 
+  //   =================================
 };
 
 const movie_form = document.getElementById("movie_form");
 
 movie_form.addEventListener("submit", handleSubmit);
+
+const cinema_drop_down = async () => {
+  try {
+    const response = await fetch("http://localhost:3000/Cinema");
+
+    const data = await response.json();
+
+    console.log(data);
+
+    let print = ``;
+
+    data.map((v, i) => {
+      print += `
+      
+       <option value="${v.id}">${v.name}</option>
+      
+      `;
+    });
+
+    print += ` </select>`;
+
+    document.getElementById("cinema").innerHTML = print;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+window.onload = function() {
+  movie_admin()
+  cinema_drop_down()
+} 

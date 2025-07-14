@@ -217,3 +217,6 @@ const handleSubmit = async () => {
 const cinema_form = document.getElementById("cinema_form");
 
 cinema_form.addEventListener("submit", handleSubmit);
+
+
+
