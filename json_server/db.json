@@ -33,9 +33,9 @@
   ],
   "Movie": [
     {
-      "name": "janvi",
+      "name": "Janvi lakani OKOK",
       "discription": "tyt",
-      "img_file": "cinema_gallery.jpg",
+      "img_file": "cinema_smile.jpg",
       "id": "735a"
     },
     {
@@ -137,13 +137,13 @@
       "img_file": "cinema_speling_art_photo.jpg"
     },
     {
-      "id": "d352",
       "name": "Janvi lakani",
       "discription": "tyt",
       "email": "lakanijanvi1999@gmai.com",
       "mobile_no": "a434343",
       "address": "asd asd asd asd",
-      "img_file": "city.jpeg"
+      "img_file": "cinema_gallery.jpg",
+      "id": "d352"
     }
   ]
 }
