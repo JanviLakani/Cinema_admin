@@ -1,36 +1,4 @@
 {
-  "cinema": [
-    {
-      "id": {},
-      "name": {},
-      "email": {},
-      "place": {}
-    },
-    {
-      "name": "Test",
-      "email": "lakanijanvi1999@gmai.com",
-      "place": "ereIIggoooooooooo",
-      "id": "86e9"
-    },
-    {
-      "name": "Test",
-      "email": "ffgfgg",
-      "place": "ereIIOKKKKKKKGG",
-      "id": "0b1c"
-    },
-    {
-      "id": "0c48",
-      "name": "Test",
-      "email": "ffgfgg",
-      "place": "ereIIOKKKKKKK"
-    },
-    {
-      "id": "0119",
-      "name": "Test",
-      "email": "lakanijanvi1999@gmai.com",
-      "place": "ereIIOKKKKKKK"
-    }
-  ],
   "Movie": [
     {
       "cinema_id": "8425",
@@ -61,11 +29,32 @@
       "img_file": "cinema_gallery.jpg"
     },
     {
-      "id": "d7fa",
       "cinema_id": "83ed",
       "name": "war",
-      "discription": "action movie",
-      "img_file": "cinema_talk.jpeg"
+      "discription": "action movie comidy",
+      "img_file": "cinema_talk.jpeg",
+      "id": "d7fa"
+    },
+    {
+      "id": "6e2c",
+      "cinema_id": "fe9f",
+      "name": "Janvi lakani OKOK",
+      "discription": "FIGHTING SEEN",
+      "img_file": "cinema_gallery.jpg"
+    },
+    {
+      "id": "b64e",
+      "cinema_id": "d352",
+      "name": "haider movie",
+      "discription": "action",
+      "img_file": "home_theater_cinema.jpg"
+    },
+    {
+      "id": "c09c",
+      "cinema_id": "0e56",
+      "name": "lootera",
+      "discription": "comedy movie",
+      "img_file": "cinema_gallery.jpg"
     }
   ],
   "Cinema": [
@@ -124,5 +113,109 @@
       "id": "d352"
     }
   ],
-  "time": []
+  "time": [
+    {
+      "id": "cc3f",
+      "cinema_id": "0e56",
+      "movie_id": "c09c",
+      "time": [
+        "02:00"
+      ],
+      "start_date": "2025-07-15",
+      "end_date": "2025-07-31"
+    },
+    {
+      "id": "a415",
+      "cinema_id": "fe9f",
+      "movie_id": "ba8b",
+      "time": [
+        "16:20"
+      ],
+      "start_date": "2025-07-16",
+      "end_date": "2025-07-31"
+    },
+    {
+      "id": "bf58",
+      "cinema_id": "83ed",
+      "movie_id": "d7fa",
+      "time": [
+        "16:00"
+      ],
+      "start_date": "2025-07-17",
+      "end_date": "2025-07-26"
+    },
+    {
+      "id": "c1c9",
+      "cinema_id": "f036",
+      "movie_id": "0afe",
+      "time": [
+        "02:31"
+      ],
+      "start_date": "2025-07-17",
+      "end_date": "2025-07-17"
+    },
+    {
+      "id": "c3d6",
+      "cinema_id": "8425",
+      "movie_id": "ac91",
+      "time": [
+        "01:33"
+      ],
+      "start_date": "2025-07-02",
+      "end_date": "2025-07-25"
+    },
+    {
+      "id": "f869",
+      "cinema_id": "d352",
+      "movie_id": "b64e",
+      "time": [
+        "03:50",
+        "02:51"
+      ],
+      "start_date": "2025-07-15",
+      "end_date": "2025-07-15"
+    }
+  ],
+  "seat": [
+    {
+      "id": "f677",
+      "cinema_id": "fe9f",
+      "movie_id": "ba8b",
+      "time": "a415",
+      "seat": "60",
+      "price": "434"
+    },
+    {
+      "id": "a320",
+      "cinema_id": "8425",
+      "movie_id": "ac91",
+      "time": "c3d6",
+      "seat": "67",
+      "price": "399"
+    },
+    {
+      "id": "f5bc",
+      "cinema_id": "8425",
+      "movie_id": "ac91",
+      "time": "c3d6",
+      "seat": "60",
+      "price": "434"
+    },
+    {
+      "id": "9063",
+      "cinema_id": "0e56",
+      "movie_id": "c09c",
+      "time": "cc3f",
+      "seat": "7",
+      "price": "434"
+    },
+    {
+      "id": "7e65",
+      "cinema_id": "d352",
+      "movie_id": "b64e",
+      "time": "f869",
+      "seat": "100",
+      "price": "500"
+    }
+  ]
 }

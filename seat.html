@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" id="seat_form">
+      
+
+    <select name="cinema" id="cinema" onchange="handleChangeMovie()"></select>
+    <br /><br />
+
+    <select name="movie" id="movie" onchange="handleChangeTime()"></select>
+    <br><br>
+
+    <select id="time"></select><br><br>
+
+    <input type="text" id="seat" placeholder="Enter Seat Number" /><br><br>
+
+    <input type="number" id="price" placeholder="Enter Price" /><br><br>
+
+    <input type="submit"> <br><br>
+
+    
+
+    </form>
+
+    <!-- <table border="1" >
+      <thead>
+        <tr>
+          <th>Cinema ID</th>
+          <th>Movie ID</th>
+          <th>Time</th>
+          <th>Seats</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody id="seat_table"></tbody>
+    </table> -->
+
+    <div id="seat_table"></div>
+
+    <script src="js/seat.js"></script>
+  </body>
+</html>

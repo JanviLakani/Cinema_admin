@@ -8,8 +8,15 @@ const movie_admin = async () => {
 
     console.log("00000000" , data);
 
-    
-    
+    const response1 = await fetch ("http://localhost:3000/Cinema")
+  const data1 =await response1.json();
+
+
+
+   const cinemaName =(id)=> {
+     const cinema = data1.find((v) => v.id === id);
+     return cinema.name
+   }
     
 
     let print = ``;
@@ -32,7 +39,7 @@ const movie_admin = async () => {
       print += `
       <tr>
         <td>><img src="/images/cinema_img/${v.img_file} " width="100px" height="100px"</td>
-        <td>${v.cinema_id}</td>
+        <td>${cinemaName(v.cinema_id)}</td>
         <td>${v.name}</td>
         <td>${v.discription}</td>
         <td><button onclick ="handleEdit('${v.id}')">E</button><button onclick="handleDelete('${v.id}')">D</button></td>
