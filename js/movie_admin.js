@@ -7,6 +7,9 @@ const movie_admin = async () => {
     const data = await response.json();
 
     console.log("00000000" , data);
+
+    
+    
     
 
     let print = ``;
@@ -52,6 +55,10 @@ const handleEdit = async (id) => {
   const response = await fetch("http://localhost:3000/Movie");
 
   const data = await response.json();
+
+
+
+  
 
   const obj = data.find((v) => v.id === id);
 

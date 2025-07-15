@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <form action="" id="cinema_movie_form">
 
-    <select name="cinema" id="cinema" onchange="handleChangeMovie()">
+      <select name="cinema" id="cinema" onchange="handleChangeMovie()"></select>
+      <br /><br />
 
-    </select> <br><br>
+      <select name="movie" id="movie"></select>
 
-    <!-- <select name="movie" id="movie"> 
+      <br /><br />
 
-    </select> -->
-    
+      <div id="time_form">
+        <input type="time" id="first_time" name="time"/>
+        <a id="first_plus">+</a>
+      </div>
 
+      <br><br>
+
+      <input type="date"> <br><br>
+
+      <input type="submit" />
+      
+    </form>
     <script src="js/time.js"></script>
-</body>
+  </body>
 </html>
