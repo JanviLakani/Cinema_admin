@@ -115,14 +115,14 @@
   ],
   "time": [
     {
-      "id": "cc3f",
-      "cinema_id": "0e56",
-      "movie_id": "c09c",
+      "cinema_id": "d352",
+      "movie_id": "b64e",
       "time": [
-        "02:00"
+        "03:00"
       ],
       "start_date": "2025-07-15",
-      "end_date": "2025-07-31"
+      "end_date": "2025-07-31",
+      "id": "cc3f"
     },
     {
       "id": "a415",
@@ -135,14 +135,14 @@
       "end_date": "2025-07-31"
     },
     {
-      "id": "bf58",
       "cinema_id": "83ed",
       "movie_id": "d7fa",
       "time": [
-        "16:00"
+        "17:00"
       ],
       "start_date": "2025-07-17",
-      "end_date": "2025-07-26"
+      "end_date": "2025-07-26",
+      "id": "bf58"
     },
     {
       "id": "c1c9",
@@ -155,16 +155,6 @@
       "end_date": "2025-07-17"
     },
     {
-      "id": "c3d6",
-      "cinema_id": "8425",
-      "movie_id": "ac91",
-      "time": [
-        "01:33"
-      ],
-      "start_date": "2025-07-02",
-      "end_date": "2025-07-25"
-    },
-    {
       "id": "f869",
       "cinema_id": "d352",
       "movie_id": "b64e",
@@ -174,6 +164,29 @@
       ],
       "start_date": "2025-07-15",
       "end_date": "2025-07-15"
+    },
+    {
+      "cinema_id": "8425",
+      "movie_id": "ac91",
+      "time": [
+        "09:39",
+        "09:39",
+        "11:39",
+        "13:47"
+      ],
+      "start_date": "2025-07-17",
+      "end_date": "2025-07-31",
+      "id": "1c21"
+    },
+    {
+      "id": "5226",
+      "cinema_id": "0e56",
+      "movie_id": "c09c",
+      "time": [
+        "02:00"
+      ],
+      "start_date": "2025-07-15",
+      "end_date": "2025-07-31"
     }
   ],
   "seat": [
@@ -186,36 +199,28 @@
       "price": "434"
     },
     {
-      "id": "a320",
-      "cinema_id": "8425",
-      "movie_id": "ac91",
-      "time": "c3d6",
-      "seat": "67",
-      "price": "399"
-    },
-    {
-      "id": "f5bc",
-      "cinema_id": "8425",
-      "movie_id": "ac91",
-      "time": "c3d6",
-      "seat": "60",
-      "price": "434"
-    },
-    {
-      "id": "9063",
-      "cinema_id": "0e56",
-      "movie_id": "c09c",
-      "time": "cc3f",
-      "seat": "7",
-      "price": "434"
-    },
-    {
       "id": "7e65",
       "cinema_id": "d352",
       "movie_id": "b64e",
       "time": "f869",
       "seat": "100",
       "price": "500"
+    },
+    {
+      "id": "6ef4",
+      "cinema_id": "0e56",
+      "movie_id": "c09c",
+      "time": "cc3f",
+      "seat": "60",
+      "price": "434"
+    },
+    {
+      "id": "96bd",
+      "cinema_id": "0e56",
+      "movie_id": "c09c",
+      "time": "cc3f",
+      "seat": "60",
+      "price": "434"
     }
   ]
 }
