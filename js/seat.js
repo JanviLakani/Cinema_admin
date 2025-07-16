@@ -1,3 +1,5 @@
+let upDateid = null;
+
 const cinema = async () => {
   try {
     const response = await fetch("http://localhost:3000/Cinema");
@@ -98,7 +100,9 @@ const handleSubmit = async () => {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/seat", {
+   if(upDateid === null) {
+
+      const response = await fetch("http://localhost:3000/seat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -106,19 +110,27 @@ const handleSubmit = async () => {
       body: JSON.stringify(obj),
     });
 
+   } else {
+
+       const response = await fetch(
+          "http://localhost:3000/seat/" + upDateid,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify(obj),
+          }
+        );
+   }
+
     await getSeat();
   } catch (error) {
     console.log(error);
   }
 };
-const seat_form = document.getElementById("seat_form");
-seat_form.addEventListener("submit", handleSubmit);
-// window.onload = cinema;
 
-window.onload = () => {
-  cinema(); // load cinema
-  getSeat(); // load seat
-};
 
 const getSeat = async () => {
   try {
@@ -152,13 +164,13 @@ const getSeat = async () => {
       </tr>`;
 
     for (let v of data) {
-      const timeValue = await getTimeById(v.time);
+      // const timeValue = await getTimeById(v.time); 
       //  Array.isArray(v.time) ? v.time.join(", ") : v.time
       print += `
         <tr>
           <td>${cinemaName(v.cinema_id)}</td>
           <td>${getMovieName(v.movie_id)}</td>
-          <td>${timeValue}</td>
+          <td>${v.time}</td>
           <td>${v.seat}</td>
           <td>${v.price}</td>
           <td><button onclick="handleDelete('${v.id}')">Delete</button>
@@ -174,6 +186,42 @@ const getSeat = async () => {
     console.log("Error fetching seat data:", error);
   }
 };
+
+
+const handleEdit = async (id) => {
+  try {
+
+    const response = await fetch("http://localhost:3000/seat/" + id);
+    const data = await response.json();
+
+    console.log("data", data);
+
+
+    
+    document.getElementById("cinema").value = data.cinema_id;
+
+    await handleChangeMovie();
+    document.getElementById("movie").value = data.movie_id;
+
+    await handleChangeTime();
+    document.getElementById("time").value = data.time;
+
+    document.getElementById("seat").value = data.seat;
+    document.getElementById("price").value = data.price;
+    
+    upDateid=data.id;
+
+ 
+
+
+
+
+  } catch (error) {  
+    console.log(error);
+    
+  }
+
+}
 
 const handleDelete = async (id) => {
   try {
@@ -195,4 +243,13 @@ const getTimeById = async (id) => {
       ? found.time.join(", ")
       : found.time
     : "N/A";
+};
+
+const seat_form = document.getElementById("seat_form");
+seat_form.addEventListener("submit", handleSubmit);
+// window.onload = cinema;
+
+window.onload = () => {
+  cinema(); // load cinema
+  getSeat(); // load seat
 };
