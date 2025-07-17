@@ -183,7 +183,7 @@ const getData = async () => {
 };
 
 const handleSubmit = async (event) => {
-  event.preventDefault();
+  
 
   const cinema_id = document.getElementById("cinema").value;
   const movie_id = document.getElementById("movie").value;

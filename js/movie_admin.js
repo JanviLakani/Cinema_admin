@@ -1,5 +1,7 @@
 let upDateid = null;
 
+
+
 const movie_admin = async () => {
   try {
     const response = await fetch("http://localhost:3000/Movie");
@@ -80,6 +82,8 @@ const handleEdit = async (id) => {
 
   upDateid = obj.id;
 };
+
+
 
 // ================================================================================ edit
 
@@ -263,3 +267,5 @@ return cinemaName?.name
 
 
 }
+
+

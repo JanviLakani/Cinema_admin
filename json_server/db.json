@@ -4,7 +4,7 @@
       "cinema_id": "8425",
       "name": "fighter",
       "discription": "FIGHTING SEEN",
-      "img_file": "popcorn_photo.jpg",
+      "img_file": "fighter.jpeg",
       "id": "ac91"
     },
     {
@@ -76,6 +76,20 @@
       "name": "animal",
       "discription": "animals",
       "img_file": "images.jpg"
+    },
+    {
+      "id": "9cb9",
+      "cinema_id": "8425",
+      "name": "fighter",
+      "discription": "FIGHTING SEEN",
+      "img_file": "city.jpeg"
+    },
+    {
+      "id": "a17b",
+      "cinema_id": "f036",
+      "name": "animal",
+      "discription": "animals",
+      "img_file": "images.jpg"
     }
   ],
   "Cinema": [
@@ -136,14 +150,16 @@
   ],
   "time": [
     {
-      "id": "c1c9",
       "cinema_id": "f036",
       "movie_id": "0afe",
       "time": [
-        "02:31"
+        "06:31",
+        "10:45",
+        "08:41"
       ],
       "start_date": "2025-07-17",
-      "end_date": "2025-07-17"
+      "end_date": "2025-08-10",
+      "id": "c1c9"
     },
     {
       "cinema_id": "0e56",
@@ -158,24 +174,17 @@
       "id": "e322"
     },
     {
-      "id": "38ce",
-      "cinema_id": "0e56",
-      "movie_id": "c09c",
-      "time": [
-        "17:30"
-      ],
-      "start_date": "2025-08-09",
-      "end_date": "2025-08-09"
-    },
-    {
-      "id": "5268",
       "cinema_id": "83ed",
       "movie_id": "d7fa",
       "time": [
-        "15:00"
+        "15:00",
+        "01:45",
+        "08:42",
+        "09:42"
       ],
       "start_date": "2025-08-01",
-      "end_date": "2025-08-09"
+      "end_date": "2025-08-31",
+      "id": "5268"
     },
     {
       "id": "710a",
@@ -231,24 +240,26 @@
       ],
       "start_date": "2025-07-17",
       "end_date": "2025-07-24"
+    },
+    {
+      "id": "272f",
+      "cinema_id": "f036",
+      "movie_id": "0afe",
+      "time": [
+        "10:00"
+      ],
+      "start_date": "2025-07-18",
+      "end_date": "2025-07-18"
     }
   ],
   "seat": [
     {
-      "cinema_id": "8425",
-      "movie_id": "681f",
-      "time": "03:25",
+      "cinema_id": "83ed",
+      "movie_id": "1b43",
+      "time": "23:30",
       "seat": "99",
       "price": "299",
       "id": "0802"
-    },
-    {
-      "cinema_id": "0e56",
-      "movie_id": "c09c",
-      "time": "22:40",
-      "seat": "50",
-      "price": "199",
-      "id": "f462"
     },
     {
       "cinema_id": "0e56",
@@ -265,14 +276,6 @@
       "time": "02:31",
       "seat": "60",
       "price": "434"
-    },
-    {
-      "cinema_id": "fe9f",
-      "movie_id": "ba8b",
-      "time": "01:00",
-      "seat": "60",
-      "price": "180",
-      "id": "d0a5"
     },
     {
       "cinema_id": "83ed",
