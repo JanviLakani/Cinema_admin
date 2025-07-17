@@ -33,7 +33,7 @@ const handle_bookMyCinema = async () => {
         // console.log("Filter Cinema Data:", filterCinemaData);
 
         const allCinemaId = storeCinemaId.map(movie => movie.cinema_id);
-        console.log("Cinemaid:", allCinemaId);
+        console.log("allCinemaid:", allCinemaId);
 
         const filterCinemaData = cinemaData.filter(vCinema => allCinemaId.includes(vCinema.id));
         console.log("Filter CinemaData:", filterCinemaData);
