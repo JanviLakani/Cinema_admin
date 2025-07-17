@@ -40,7 +40,7 @@ const movie_admin = async () => {
 
       print += `
       <tr>
-        <td><img src="/images/cinema_img/${v.img_file} " width="100px" height="100px"</td>
+        <td><img src="/images/movie_img/${v.img_file} " width="100px" height="100px"</td>
         <td>${cinemaName(v.cinema_id)}</td>
         <td>${v.name}</td>
         <td>${v.discription}</td>

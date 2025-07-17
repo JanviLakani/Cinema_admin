@@ -11,85 +11,141 @@
       "cinema_id": "f036",
       "name": "dhamaal",
       "discription": "comedy film",
-      "img_file": "cinema_gallery.jpg",
+      "img_file": "dhamal.jpeg",
       "id": "0afe"
     },
     {
       "cinema_id": "fe9f",
       "name": "hera feri",
       "discription": " comedy,drama",
-      "img_file": "city.jpeg",
+      "img_file": "herapheri.jpeg",
       "id": "ba8b"
     },
     {
-      "id": "681f",
       "cinema_id": "8425",
       "name": "3 Idiots",
       "discription": "comedi",
-      "img_file": "cinema_gallery.jpg"
+      "img_file": "3idiots.jpeg",
+      "id": "681f"
     },
     {
       "cinema_id": "83ed",
       "name": "war",
       "discription": "action movie comidy",
-      "img_file": "cinema_talk.jpeg",
+      "img_file": "war.jpeg",
       "id": "d7fa"
     },
     {
-      "id": "6e2c",
-      "cinema_id": "fe9f",
-      "name": "Janvi lakani OKOK",
-      "discription": "FIGHTING SEEN",
-      "img_file": "cinema_gallery.jpg"
-    },
-    {
-      "id": "b64e",
-      "cinema_id": "d352",
-      "name": "haider movie",
-      "discription": "action",
-      "img_file": "home_theater_cinema.jpg"
-    },
-    {
-      "id": "c09c",
       "cinema_id": "0e56",
       "name": "lootera",
       "discription": "comedy movie",
-      "img_file": "cinema_gallery.jpg"
+      "img_file": "lootera.jpeg",
+      "id": "c09c"
     },
     {
-      "id": "c855",
       "cinema_id": "0e56",
       "name": "pathaan",
       "discription": "action",
-      "img_file": "home_theater_cinema.jpg"
+      "img_file": "pathan.jpeg",
+      "id": "c855"
     },
     {
-      "id": "1b43",
       "cinema_id": "83ed",
       "name": "KGF",
       "discription": "ACTION",
-      "img_file": "cinema_gallery.jpg"
+      "img_file": "kgf.jpeg",
+      "id": "1b43"
     },
     {
-      "id": "482b",
       "cinema_id": "f036",
       "name": "animal",
       "discription": "animals",
-      "img_file": "images.jpg"
+      "img_file": "animal.jpeg",
+      "id": "482b"
     },
     {
-      "id": "9cb9",
       "cinema_id": "8425",
       "name": "fighter",
       "discription": "FIGHTING SEEN",
-      "img_file": "city.jpeg"
+      "img_file": "fighter.jpeg",
+      "id": "9cb9"
     },
     {
-      "id": "a17b",
       "cinema_id": "f036",
       "name": "animal",
       "discription": "animals",
-      "img_file": "images.jpg"
+      "img_file": "animal.jpeg",
+      "id": "a17b"
+    },
+    {
+      "cinema_id": "f036",
+      "name": "war",
+      "discription": "action movie comidy fighting",
+      "img_file": "war.jpeg",
+      "id": "994f"
+    },
+    {
+      "cinema_id": "0e56",
+      "name": "m.s.dhoni",
+      "discription": "sport",
+      "img_file": "m.s.dhoni.jpeg",
+      "id": "cbe5"
+    },
+    {
+      "id": "6045",
+      "cinema_id": "0e56",
+      "name": "3 Idiots",
+      "discription": "\tcomedi",
+      "img_file": "3idiots.jpeg"
+    },
+    {
+      "cinema_id": "f036",
+      "name": "3 Idiots",
+      "discription": "comedy film",
+      "img_file": "3idiots_img2.jpeg",
+      "id": "7f2e"
+    },
+    {
+      "cinema_id": "fe9f",
+      "name": "maa",
+      "discription": " mythology, horror,suspense",
+      "img_file": "maa.jpeg",
+      "id": "7846"
+    },
+    {
+      "cinema_id": "83ed",
+      "name": "maa",
+      "discription": "mythology, horror,suspense",
+      "img_file": "maa_img1.jpeg",
+      "id": "356b"
+    },
+    {
+      "id": "dd40",
+      "cinema_id": "0e56",
+      "name": "maa",
+      "discription": "mythology, horror,suspense",
+      "img_file": "maa_img2.jpeg"
+    },
+    {
+      "id": "85bc",
+      "cinema_id": "8425",
+      "name": "m.s.dhoni",
+      "discription": "From a small-town boy to a global cricketing icon",
+      "img_file": "m.s.dhoni.jpeg"
+    },
+    {
+      "id": "ea94",
+      "cinema_id": "0e56",
+      "name": "HOUSEFULL5",
+      "discription": "comedy movie",
+      "img_file": "houseful5_img.jpeg"
+    },
+    {
+      "id": "9534",
+      "cinema_id": "83ed",
+      "name": "HOUSEFULL5",
+      "discription": "comedy movie",
+      "img_file": "houseful5_img.jpeg"
     }
   ],
   "Cinema": [
