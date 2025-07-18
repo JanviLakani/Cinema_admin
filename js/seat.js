@@ -78,8 +78,26 @@ const handleChangeTime = async () => {
         <option value="${v}">${v}</option>
       `;
     });
+
+     dateDropdown(timeMetch.start_date, timeMetch.end_date);
   }
   document.getElementById("time").innerHTML = print;
+};
+
+const dateDropdown = (startDate, endDate) => {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  let print = `<option value="">Select Date</option>`;
+
+  for (let i = new Date(start); i <= end; i.setDate(i.getDate() + 1)) {
+    let d = new Date(i);
+    let dateValue = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; 
+    let dateUser = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`; 
+
+    print += `<option value="${dateValue}">${dateUser}</option>`;
+  }
+
+  document.getElementById("date").innerHTML = print;
 };
 
 const handleSubmit = async () => {
@@ -88,13 +106,16 @@ const handleSubmit = async () => {
   const cinema_id = document.getElementById("cinema").value;
   const movie_id = document.getElementById("movie").value;
   const time = document.getElementById("time").value;
-  const seat = document.getElementById("seat").value;
+  const date=document.getElementById("date").value;
+  const seatV = parseInt(document.getElementById("seat").value)
+  const seat=Array(seatV).fill(0)
   const price = document.getElementById("price").value;
 
   const obj = {
     cinema_id,
     movie_id,
     time,
+    date,
     seat,
     price,
   };
@@ -158,6 +179,7 @@ const getSeat = async () => {
         <th>Cinema Name</th>
         <th>Movie Movie</th>
         <th>Time</th>
+        <th>Date</th>
         <th>Seat</th>
         <th>Price</th>
         <th>Action</th>
@@ -171,7 +193,8 @@ const getSeat = async () => {
           <td>${cinemaName(v.cinema_id)}</td>
           <td>${getMovieName(v.movie_id)}</td>
           <td>${v.time}</td>
-          <td>${v.seat}</td>
+          <td>${v.date}</td>
+          <td>${v.seat.length} seat</td>
           <td>${v.price}</td>
           <td><button onclick="handleDelete('${v.id}')">Delete</button>
           <button onclick="handleEdit('${v.id}')">Edit</button>
@@ -205,6 +228,9 @@ const handleEdit = async (id) => {
 
     await handleChangeTime();
     document.getElementById("time").value = data.time;
+
+    
+      document.getElementById("date").value = data.date;
 
     document.getElementById("seat").value = data.seat;
     document.getElementById("price").value = data.price;
@@ -250,6 +276,7 @@ seat_form.addEventListener("submit", handleSubmit);
 // window.onload = cinema;
 
 window.onload = () => {
-  cinema(); // load cinema
-  getSeat(); // load seat
+  cinema(); 
+  getSeat(); 
+  
 };

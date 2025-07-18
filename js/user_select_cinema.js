@@ -83,9 +83,13 @@ const cinema_click = async (id) => {
 
         console.log("moviedata",movieData);
 
-        localStorage.setItem("movieId",movie_id)
+        localStorage.setItem("movieId", movieData.id)
+
+        
 
         window.location.href = "user_select_date.html"; 
+
+
         
         
     } catch (error) {
