@@ -53,7 +53,7 @@ const movie_click = (id, name) => {
 
   console.log("Movie click:-", id, "name :-", name);
 
-  localStorage.setItem("selected_movie_id", id);
+  // localStorage.setItem("selected_movie_id", id);
   localStorage.setItem("selected_movie_name", name);
 
   window.location.href = "user_select_cinema.html";
