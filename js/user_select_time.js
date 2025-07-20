@@ -1,28 +1,44 @@
-// const handleTime = async () => { 
-//   console.log("hello");
 
-//     localStorage.setItem("setTime", time);
 
-// //   const getTime = localStorage.getItem("setTime");
+const matchTime = JSON.parse(localStorage.getItem("matchTime"));
 
-// //   console.log(getTime);
+console.log("matchTime" , matchTime);
 
-//   let timelist = matchTime.find((v) => v.time === time);
 
-//   console.log(timelist);
+const handleTime = () => {
 
-//   for (let i = 0; i < timelist.length; i++) {
+    const getDate = localStorage.getItem("Date");
+
+    console.log("getDate :-",getDate);
+
+
+      let print = "";
+
+  matchTime.time.map((time) => {
+    print += `
+      <a href="#" 
+         onclick="handleTimeClick('${time}')" 
+         style="margin:8px; padding:10px 15px; background:grey; color:white; border-radius:5px; text-decoration:none; display:inline-block;">
+        ${time}
+      </a>
+    `;
+  });
+
+  document.getElementById("timeList").innerHTML = print;
     
-//   }
-// }; 
 
-// window.onload = handleTime;
+}
 
+const handleTimeClick = (time) => {
 
-// let d1=new Date();
-// let d2=new Date(2025,5,30);
+  console.log("hello time");
 
-// for(i=d1; i<=d2; i.setDate(i.getDate()+1)) {
-//    console.log(i.toLocaleDateString());
-   
-// }  
+  localStorage.setItem("Time" ,time)
+
+  console.log("time" ,time);
+  
+  
+  window.location.href="user_select_seat.html";
+}
+
+window.onload=handleTime 

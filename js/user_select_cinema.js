@@ -40,15 +40,15 @@ const handle_bookMyCinema = async () => {
     );
     console.log("Filter CinemaData:", filterCinemaData);
 
-    print = ``;
+print = ``;
 
-    filterCinemaData.map((v, i) => {
-      print += `
-            <a href="#"  class="cinema_card_img" onclick="cinema_click('${v.id}')">
-            <img src="images/cinema_img/${v.img_file}" />${v.name}
-            </a>
-            `;
-    });
+filterCinemaData.map((v, i) => {
+  print += `
+    <a href="#" class="cinema_card_img" onclick='cinema_click(${JSON.stringify(v)})'>
+      <img src="images/cinema_img/${v.img_file}" />${v.name}
+    </a>
+  `;
+});
 
     document.getElementById("book_cinema").innerHTML = print;
   } catch (error) {
@@ -56,12 +56,15 @@ const handle_bookMyCinema = async () => {
   }
 };
 
-const cinema_click = async (id) => {
+const cinema_click = async (cinemaData) => {                        
+  console.log("cinemaData",cinemaData);
+  const id = cinemaData.id;
+  const name = cinemaData.name;
     event.preventDefault();
     
-    console.log("cinema click id ", id);
 
     localStorage.setItem("cinemaId" ,id);
+    localStorage.setItem("cinemaName" ,name);
 
     const cinemaId=localStorage.getItem("cinemaId");
 
@@ -76,17 +79,14 @@ const cinema_click = async (id) => {
 
         const allMovieData= await response.json();
 
-        console.log("movieData",allMovieData);
+        // console.log("movieData",allMovieData);
 
 
         const movieData=allMovieData.find(movie =>movie.name === getMovieName &&  movie.cinema_id === cinemaId);
 
-        console.log("moviedata",movieData);
+        // console.log("moviedata",movieData);
 
         localStorage.setItem("movieId", movieData.id)
-
-        
-
         window.location.href = "user_select_date.html"; 
 
 

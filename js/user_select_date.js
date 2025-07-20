@@ -19,6 +19,8 @@ const handle_bookMyCinema = async () => {
 
     console.log("matchTime", matchTime);
 
+    localStorage.setItem("matchTime", JSON.stringify(matchTime));
+
     let start = new Date(matchTime.start_date);
     let end = new Date(matchTime.end_date);
 
@@ -33,12 +35,13 @@ const handle_bookMyCinema = async () => {
       console.log("all date", dateList);
 
       print += `
-          <a href="user_select_time.html?date=${urlDate}" 
-             class="date-link"
-             style="display:inline-block; margin:8px; padding:10px 15px; background:grey; border-radius:5px; text-decoration:none; color:white;">
-            ${dateList}
-          </a>
-        `;
+  <a href="#" 
+     onclick="handleDateClick('${urlDate}')" 
+     class="date-link"
+     style="display:inline-block; margin:8px; padding:10px 15px; background:grey; border-radius:5px; text-decoration:none; color:white;">
+    ${dateList}
+  </a>
+`;
     }
 
     document.getElementById("dateList").innerHTML = print;
@@ -49,4 +52,11 @@ const handle_bookMyCinema = async () => {
   }
 };
 
+const handleDateClick = (date) => {
+  console.log("heloooo");
+
+  localStorage.setItem("Date", date);
+
+  window.location.href = "user_select_time.html";
+};
 window.onload = handle_bookMyCinema;
