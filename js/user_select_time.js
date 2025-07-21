@@ -1,44 +1,51 @@
-
-
 const matchTime = JSON.parse(localStorage.getItem("matchTime"));
 
-console.log("matchTime" , matchTime);
-
+console.log("matchTime", matchTime);
 
 const handleTime = () => {
+  const getDate = localStorage.getItem("Date");
 
-    const getDate = localStorage.getItem("Date");
+  console.log("getDate :-", getDate);
 
-    console.log("getDate :-",getDate);
-
-
-      let print = "";
+  let print = "";
 
   matchTime.time.map((time) => {
     print += `
-      <a href="#" 
-         onclick="handleTimeClick('${time}')" 
-         style="margin:8px; padding:10px 15px; background:grey; color:white; border-radius:5px; text-decoration:none; display:inline-block;">
-        ${time}
-      </a>
-    `;
+  <a href="#" 
+     onclick="handleTimeClick('${time}')" 
+     class="time-button">
+    ${time}
+  </a>
+`;
   });
 
   document.getElementById("timeList").innerHTML = print;
-    
-
-}
+};
 
 const handleTimeClick = (time) => {
-
   console.log("hello time");
 
-  localStorage.setItem("Time" ,time)
+  localStorage.setItem("Time", time);
 
-  console.log("time" ,time);
-  
-  
-  window.location.href="user_select_seat.html";
-}
+  console.log("time", time);
 
-window.onload=handleTime 
+  // ==============================================
+
+  const selectDate = localStorage.getItem("Date");
+  const matchTime = JSON.parse(localStorage.getItem("matchTime"));
+
+  const cinemaShow = {
+    cinema_id: matchTime.cinema_id,
+    movie_id: matchTime.movie_id,
+    time, // time me key value same hai to ek hi
+    date: selectDate,
+  };
+
+  localStorage.setItem("cinemaShow", JSON.stringify(cinemaShow));
+
+  // ==============================================
+
+  window.location.href = "user_select_seat.html";
+};
+
+window.onload = handleTime;

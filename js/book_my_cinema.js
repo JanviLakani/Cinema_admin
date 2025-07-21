@@ -8,11 +8,6 @@ const handle_bookMyShow = async () => {
 
     console.log("all movie", data);
 
-    // data.map((v,i) => {
-    //   if (!unicMovie.includes(v.name)) {
-    //     unicMovie.push(v.name);
-    //   }
-    // })
 
     data.map((v, i) => {
       const Duplicate = unicMovie.some((v1) => v1.name === v.name);

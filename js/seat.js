@@ -177,7 +177,7 @@ const getSeat = async () => {
     let print = `<table border="1">
       <tr>
         <th>Cinema Name</th>
-        <th>Movie Movie</th>
+        <th>Movie Name</th>
         <th>Time</th>
         <th>Date</th>
         <th>Seat</th>

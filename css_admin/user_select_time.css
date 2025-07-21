@@ -1,0 +1,11 @@
+
+.time-button {
+  margin: 8px;
+  padding: 10px 15px;
+  background: grey; 
+  /* background: red; */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+}

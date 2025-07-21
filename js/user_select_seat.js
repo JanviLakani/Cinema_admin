@@ -1,80 +1,81 @@
 let bookSeat = []; //[3, 4]
-                  //   0  1
+//   0  1
 
 const handleClickSeat = (seatNum) => {
+  if (bookSeat.includes(seatNum)) {
+    let index = bookSeat.findIndex((num) => num === seatNum);
+    bookSeat.splice(index, 1);
 
-
-  
-
-
-
-  // bookSeat.includes(seatNum) 
-
-  // console.log(bookSeat.includes(seatNum)); 
-
-  if(bookSeat.includes(seatNum)) {
-  // let index=bookSeat.findIndex((seatNum) =>  seatNum ===  ) 
-     bookSeat.splice(index, 1);
+    console.log("bookSeat removed", bookSeat);
   } else {
     bookSeat.push(seatNum);
-    console.log( bookSeat.push(seatNum));
+    // console.log( bookSeat.push(seatNum));
+
+    console.log(" push bookSeat", bookSeat);
   }
 
-
-
-
-  // bookSeat.push(seatNum);
-
-  // console.log("your seat is push [] arr :-", bookSeat);
-
-  // bookSeat.splice(seatNum, 1);
-
-  // console.log("remove", bookSeat);
-
-  // let isAvailable = bookSeat.some(() => {
-
-  //    console.log("isAvailable", isAvailable);
-
-  //   if(!isAvailable)  {
-
-  //   } else {
-
-  //   }
-  // })
-
-  // if (bookSeat === "") {
-  // } else {
-  // }
+  handleSeat();
 };
 
 const handleSeat = async () => {
-  const matchTime = JSON.parse(localStorage.getItem("matchTime"));
+  // const matchTime = JSON.parse(localStorage.getItem("matchTime"));
 
-  console.log("matchTime", matchTime);
+  // console.log("matchTime", matchTime);
 
-  const getTime = localStorage.getItem("Time");
+  // const getTime = localStorage.getItem("Time");
 
-  console.log("getTime in local", getTime);
+  // console.log("getTime in local", getTime);
+
+  // try {
+  //   const getCinemaId = localStorage.getItem("cinemaId");
+
+  //   console.log("getCinemaId", getCinemaId);
+
+  //   const seatdata = await fetch("http://localhost:3000/seat");
+
+  //   const date = await seatdata.json();
+
+  //   console.log(date);
+
+  //   const seatData = date.find((v) => v.cinema_id === getCinemaId);
+
+  const cinemaShow = JSON.parse(localStorage.getItem("cinemaShow"));
+
+  console.log("cinemaShow", cinemaShow);
 
   try {
-    const getCinemaId = localStorage.getItem("cinemaId");
+    const responseData = await fetch("http://localhost:3000/seat");
+    const data = await responseData.json();
 
-    console.log("getCinemaId", getCinemaId);
+    console.log("Seat Data from server", data);
 
-    const seatdata = await fetch("http://localhost:3000/seat");
+    const seatData = data.find(
+      (v) =>
+        v.cinema_id === cinemaShow.cinema_id &&
+        v.movie_id === cinemaShow.movie_id &&
+        v.time === cinemaShow.time &&
+        v.date === cinemaShow.date
+    );
 
-    const date = await seatdata.json();
-
-    console.log(date);
-
-    const seatData = date.find((v) => v.cinema_id === getCinemaId);
+    if (!seatData) {
+      document.getElementById("seatDisplay").innerHTML = "No seat data found.";
+      return;
+    }
 
     let print = ``;
 
     seatData.seat.map((v, i) => {
-      print += `
-        <button onclick="handleClickSeat(${i})">${i + 1}</button>
-        `;
+      if (bookSeat.includes(i)) {
+        print += `
+    <button class="bookseatcolor" onclick="handleClickSeat(${i})">${
+          i + 1
+    }</button>
+  `;
+      } else {
+        print += `
+    <button onclick="handleClickSeat(${i})">${i + 1}</button>
+  `;
+      }
     });
 
     console.log(seatData);

@@ -34,11 +34,10 @@ const handle_bookMyCinema = async () => {
 
       console.log("all date", dateList);
 
-      print += `
+print += `
   <a href="#" 
      onclick="handleDateClick('${urlDate}')" 
-     class="date-link"
-     style="display:inline-block; margin:8px; padding:10px 15px; background:grey; border-radius:5px; text-decoration:none; color:white;">
+     class="date-link">
     ${dateList}
   </a>
 `;
