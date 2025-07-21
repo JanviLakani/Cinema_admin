@@ -1,14 +1,50 @@
-const handleClickSeat = (seatNum) => {
-  console.log("seatnum :- ", seatNum);
+let bookSeat = []; //[3, 4]
+                  //   0  1
 
-  const isOk = confirm("Are You Sure !you are book ... this movie");
-  if (isOk) {
-    // alert("booked");                                 
-    
-    //  alert(`Seat ${seatNum} booked`);
+const handleClickSeat = (seatNum) => {
+
+
+  
+
+
+
+  // bookSeat.includes(seatNum) 
+
+  // console.log(bookSeat.includes(seatNum)); 
+
+  if(bookSeat.includes(seatNum)) {
+  // let index=bookSeat.findIndex((seatNum) =>  seatNum ===  ) 
+     bookSeat.splice(index, 1);
   } else {
-    // alert("not book");
-  }                                                                                                 
+    bookSeat.push(seatNum);
+    console.log( bookSeat.push(seatNum));
+  }
+
+
+
+
+  // bookSeat.push(seatNum);
+
+  // console.log("your seat is push [] arr :-", bookSeat);
+
+  // bookSeat.splice(seatNum, 1);
+
+  // console.log("remove", bookSeat);
+
+  // let isAvailable = bookSeat.some(() => {
+
+  //    console.log("isAvailable", isAvailable);
+
+  //   if(!isAvailable)  {
+
+  //   } else {
+
+  //   }
+  // })
+
+  // if (bookSeat === "") {
+  // } else {
+  // }
 };
 
 const handleSeat = async () => {
@@ -37,7 +73,7 @@ const handleSeat = async () => {
 
     seatData.seat.map((v, i) => {
       print += `
-        <button onclick="handleClickSeat(${i + 1})">${i + 1}</button>
+        <button onclick="handleClickSeat(${i})">${i + 1}</button>
         `;
     });
 
@@ -47,8 +83,6 @@ const handleSeat = async () => {
   } catch (error) {
     console.log(error);
   }
-
-
 };
 
 window.onload = handleSeat;
