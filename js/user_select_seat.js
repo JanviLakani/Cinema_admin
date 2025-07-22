@@ -126,6 +126,9 @@ const handleSeat = async () => {
 const handleSeatUpdate =  (id) => {
 
   console.log("price id :- ", id);
+
+  console.log(" bookSeat bookSeat",bookSeat);
+  
   
 
 }
