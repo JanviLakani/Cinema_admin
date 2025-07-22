@@ -1,7 +1,11 @@
 let bookSeat = []; //[3, 4]
 //   0  1
 
-const handleClickSeat = (seatNum) => {
+const handleClickSeat = async (seatNum, priceid) => {
+  console.log("seatNum", seatNum);
+
+  console.log("get priceid", priceid);
+
   if (bookSeat.includes(seatNum)) {
     let index = bookSeat.findIndex((num) => num === seatNum);
     bookSeat.splice(index, 1);
@@ -12,6 +16,37 @@ const handleClickSeat = (seatNum) => {
     // console.log( bookSeat.push(seatNum));
 
     console.log(" push bookSeat", bookSeat);
+  }
+
+  try {
+    const responseSeat = await fetch("http://localhost:3000/seat/" + priceid);
+
+    const seatDataPrice = await responseSeat.json();
+
+    console.log("get seatDataPrice :- ", seatDataPrice);
+
+    let print = ``;
+
+    print += `
+      <h2>no. of seat :- ${bookSeat.length}</h2>
+      <h2>Per seat price :- ${seatDataPrice.price}</h2>
+      <h2>Total :- ${bookSeat.length * seatDataPrice.price}</h2>
+      <button onclick="handleSeatUpdate('${priceid}')">submit</button>
+    `;
+
+    document.getElementById("display").innerHTML = print;
+  } catch (error) {
+    console.log(error);
+  }
+
+  if (bookSeat.length > 0) {
+    document.getElementById("display").style.display = "block";
+
+    //  document.getElementById("display").innerHTML=`<h2>no. of seat :- ${bookSeat.length}</h2>`
+    // document.getElementById("display").innerHTML=`<h2>Per seat price :-${seatDataPrice.price}</h2>`
+    // document.getElementById("display").innerHTML=`<h2>Total :-${bookSeat.length * seatDataPrice.price}</h2>`
+  } else {
+    document.getElementById("display").style.display = "none";
   }
 
   handleSeat();
@@ -67,13 +102,15 @@ const handleSeat = async () => {
     seatData.seat.map((v, i) => {
       if (bookSeat.includes(i)) {
         print += `
-    <button class="bookseatcolor" onclick="handleClickSeat(${i})">${
-          i + 1
-    }</button>
+    <button class="bookseatcolor" onclick="handleClickSeat('${i}','${
+          seatData.id
+        }')">${i + 1}</button>
   `;
       } else {
         print += `
-    <button onclick="handleClickSeat(${i})">${i + 1}</button>
+    <button onclick="handleClickSeat(${i} , '${seatData.id}' )">${
+          i + 1
+        }</button>
   `;
       }
     });
@@ -85,5 +122,12 @@ const handleSeat = async () => {
     console.log(error);
   }
 };
+
+const handleSeatUpdate =  (id) => {
+
+  console.log("price id :- ", id);
+  
+
+}
 
 window.onload = handleSeat;
