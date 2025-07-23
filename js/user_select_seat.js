@@ -100,19 +100,57 @@ const handleSeat = async () => {
     let print = ``;
 
     seatData.seat.map((v, i) => {
-      if (bookSeat.includes(i)) {
-        print += `
+      // console.log("value", v);
+      if (v === 0) {
+        if (bookSeat.includes(i)) {
+          print += `
+        
     <button class="bookseatcolor" onclick="handleClickSeat('${i}','${
-          seatData.id
-        }')">${i + 1}</button>
+            seatData.id
+          }')">${i + 1} </button>
   `;
-      } else {
-        print += `
-    <button onclick="handleClickSeat(${i} , '${seatData.id}' )">${
-          i + 1
-        }</button>
+        } else {
+          print += `
+    <button  onclick="handleClickSeat(${i} , '${seatData.id}' )">${
+            i + 1
+          }</button>
   `;
+        }
+      } else if (v === 1) {
+        if (bookSeat.includes(i)) {
+          print += `
+        
+    <button class="bookseatcolor" onclick="handleClickSeat('${i}','${
+            seatData.id
+          }')">${i + 1} ${v}</button>
+  `;
+        } else {
+          print += `
+    <button disabled onclick="handleClickSeat(${i} , '${seatData.id}' )">${
+            i + 1
+          }</button>
+  `;
+        }
       }
+
+      // ========
+
+      //     if (bookSeat.includes(i)) {
+      //       print += `
+
+      //   <button class="bookseatcolor" onclick="handleClickSeat('${i}','${
+      //         seatData.id
+      //       }')">${i + 1} ${v}</button>
+      // `;
+      //     } else {
+      //       print += `
+      //   <button  onclick="handleClickSeat(${i} , '${seatData.id}' )">${
+      //         i + 1
+      //       }</button>
+      // `;
+      //     }
+
+      // ========
     });
 
     console.log(seatData);
@@ -124,62 +162,57 @@ const handleSeat = async () => {
 };
 
 const handleSeatUpdate = async (id) => {
-
   console.log("seatid id :- ", id);
 
-  console.log(" bookSeat bookSeat",bookSeat);
-  
+  console.log(" bookSeat bookSeat", bookSeat);
+
   try {
-    
-    const seatUpdateResponse = await fetch ("http://localhost:3000/seat/" + id );
+    const seatUpdateResponse = await fetch("http://localhost:3000/seat/" + id);
 
-    const updateData =await seatUpdateResponse.json();
+    const updateData = await seatUpdateResponse.json();
 
-    console.log( "updateData show :-",updateData);
-    
+    console.log("updateData show :-", updateData);
 
-   console.log(updateData.seat);
-   
-  const updateSeat=updateData.seat.map((v,i) => {
-  if(bookSeat.includes(i)) {
-    return 1;
-  } else {
-     return v;
-  }  
-  })
+    console.log(updateData.seat);
 
-  console.log("updateSeat seat :-", updateSeat);
+    const updateSeat = updateData.seat.map((v, i) => {
+      if (bookSeat.includes(i)) {
+        return 1;
+      } else {
+        return v;
+      }
+    });
 
-const updateSeatObj = {
-    id: updateData.id,
-  cinema_id: updateData.cinema_id,
-  movie_id: updateData.movie_id,
-  time: updateData.time,
-  date: updateData.date,
-  price: updateData.price,
-  seat: updateSeat,
-}
+    console.log("updateSeat seat :-", updateSeat);
 
-console.log("updateSeatObj",updateSeatObj);
+    const updateSeatObj = {
+      id: updateData.id,
+      cinema_id: updateData.cinema_id,
+      movie_id: updateData.movie_id,
+      time: updateData.time,
+      date: updateData.date,
+      price: updateData.price,
+      seat: updateSeat,
+    };
 
+    console.log("updateSeatObj", updateSeatObj);
 
-  const seatUpdateResponseJson = await fetch ("http://localhost:3000/seat/" + id ,{
-    method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
+    const seatUpdateResponseJson = await fetch(
+      "http://localhost:3000/seat/" + id,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
 
-            body: JSON.stringify(updateSeatObj),
-  })
-  
-  console.log(seatUpdateResponseJson);
-  
+        body: JSON.stringify(updateSeatObj),
+      }
+    );
 
+    console.log("json upadte", seatUpdateResponseJson);
   } catch (error) {
     console.log(error);
-    
   }
-
-}
+};
 
 window.onload = handleSeat;
