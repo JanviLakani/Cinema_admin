@@ -29,7 +29,7 @@ const handle_bookMyShow = async () => {
     unicMovie.map((v, i) => {
       print += `
             
-            <a href="#" class="cinema_card_img" onclick="movie_click( '${v.id}', '${v.name}')">
+            <a href="#" class="cinema_card_img" onclick="movie_details_click('${v.name}')" onclick="movie_click( '${v.id}', '${v.name}')">
             <img src="images/movie_img/${v.img_file}" />${v.name}
            </a>
             
@@ -70,6 +70,22 @@ let print1 = ``;
   }
 };
 
+// ==================================== 
+
+const movie_details_click = (name) => {
+
+  console.log("hellooooooo");
+  
+console.log("get movie name" , name);
+
+localStorage.setItem("name" ,name )
+
+ window.location.href = "movie_details.html";
+
+}
+
+// ==================================== 
+
 const movie_click = (id, name) => {
   event.preventDefault();
 
@@ -80,6 +96,8 @@ const movie_click = (id, name) => {
 
   window.location.href = "user_select_cinema.html";
 };
+
+
 
 
 
